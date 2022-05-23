@@ -5,7 +5,7 @@ title: '安装'
 # 安装
 
 ```
-npm i -D vase-ui
+npm i -D fm-ui
 ```
 
 <ClientOnly>

@@ -6,9 +6,9 @@ title: '快速上手'
 
 ```js
 // 全局注册
-import VaseUI from 'vase-ui';
+import FmUI from 'fm-ui';
 Vue.use(VaseUI, { router });
-import 'vase-ui/lib/vase-ui.css';
+import 'fm-ui/lib/fm-ui.css';
 // 按需注册
 import { Button, KeepAlive } from 'fm-ui';
 Vue.use(Button).use(KeepAlive, { router });

@@ -39,18 +39,33 @@ module.exports = {
       nav: [
         { text: 'Home', link: '/' },
       ],
-      sidebar: [
-        {
-          title: '开发指南',
-          collapsable: true,
-          children: ['views/guide/install.md', 'views/guide/get-started.md'],
-        },
-        {
-          title: '组件',
-          collapsable: true,
-          children: ['views/components/basic/'],
-        },
-      ],
+    //   sidebar: [
+    //     {
+    //       title: '开发指南',
+    //       collapsable: true,
+    //       children: ['views/guide/install.md', 'views/guide/get-started.md'],
+    //     },
+    //     {
+    //       title: '组件',
+    //       collapsable: true,
+    //       children: ['views/components/basic/'],
+    //     },
+    //   ],
+      sidebar: {
+        '/views/':[
+            {
+                title: '开发指南',
+                collapsable: true,
+                children: ['/views/guide/install.md', '/views/guide/get-started.md'],
+              },
+              {
+                title: '组件',
+                collapsable: true,
+                children: ['/views/components/basic/'],
+              },
+        ]
+      },
+
     },
     plugins: [
         [require('./plugins/demo/')],
