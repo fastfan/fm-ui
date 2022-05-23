@@ -1,29 +1,63 @@
 {
   "name": "fm-ui",
   "version": "0.1.0",
-  "private": true,
+  "description": "A Component Library for Vue.js.",
+  "private": false,
+  "author": "fastfan",
+  "license": "MIT",
+  "main": "lib/fm-ui.common.js",
+  "files": [
+    "lib",
+    "src",
+    "packages",
+    "types"
+  ],
+  "typings": "types/index.d.ts",
   "scripts": {
+    "lib": "vue-cli-service build --target lib --name fm-ui --dest lib packages/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vuepress dev docs --no-cache",
+    "docs:dev": "vuepress dev docs --cache .cache",
+    "docs:build": "vuepress build docs --no-cache",
+    "d": "bash deploy.sh"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "core-js": "2.6.5",
+    "autoprefixer": "^8.0.0",
+    "babel-plugin-import": "^1.13.1",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "element-ui": "^2.13.2",
+    "highlight.js": "^9.12.0",
+    "postcss-import": "^12.0.1",
+    "postcss-url": "^8.0.0",
+    "vant": "^2.10.9",
+    "vue": "^2.6.11",
+    "vue-highlight.js": "^2.2.0",
+    "vuepress-plugin-cursor-effects": "^1.1.2",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
+    "vuepress-theme-reco": "^1.5.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
     "@vue/cli-plugin-babel": "~4.5.11",
     "@vue/cli-plugin-eslint": "~4.5.11",
     "@vue/cli-service": "~4.5.11",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "core-js": "^2.6.5",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
+    "postcss-pxtorem": "^5.1.1",
     "prettier": "^2.2.1",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.4.1"
   },
   "eslintConfig": {
     "root": true,
