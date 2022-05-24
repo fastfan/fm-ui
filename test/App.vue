@@ -2,24 +2,21 @@
  * @Author: fastfan
  * @Date: 2022-05-23 19:56:21
  * @LastEditors: fastfan
- * @LastEditTime: 2022-05-23 22:04:02
+ * @LastEditTime: 2022-05-24 15:29:28
  * @Description: your description
 -->
 <template>
   <div id="app">
-    <!-- <test-button>按钮测试</test-button> -->
-    <!-- <fm-water-full /> -->
-    <!-- <fm-uploader /> -->
+   <test-common-detail />
   </div>
 </template>
 
 <script>
-// import TestButton from './TestButton';
-
+import TestCommonDetail from './TestCommonDetail';
 export default {
   name: 'app',
   components: {
-    // TestButton,
+    TestCommonDetail
   },
 };
 </script>

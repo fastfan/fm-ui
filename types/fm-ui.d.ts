@@ -2,11 +2,11 @@
  * @Author: fastfan
  * @Date: 2022-05-23 19:59:18
  * @LastEditors: fastfan
- * @LastEditTime: 2022-05-23 20:18:59
+ * @LastEditTime: 2022-05-24 15:30:46
  * @Description: your description
  */
 import Vue from 'vue'
-import { FmButton } from './button';
+import { FmCommonDetail } from './common-detail';
 import { FmKeepAlive } from './keep-alive';
 export interface InstallationOptions {
     router: any,
@@ -16,6 +16,6 @@ export const version: string
 
 export function install(vue: typeof Vue, options: InstallationOptions): void
 
-export class Button extends FmButton { }
+export class Button extends FmCommonDetail { }
 
 export class KeepAlive extends FmKeepAlive { }
