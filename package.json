@@ -1,11 +1,11 @@
 {
-  "name": "fm-ui",
-  "version": "0.1.0",
+  "name": "fwm-ui",
+  "version": "0.1.1",
   "description": "A Component Library for Vue.js.",
   "private": false,
   "author": "fastfan",
   "license": "MIT",
-  "main": "lib/fm-ui.common.js",
+  "main": "lib/fwm-ui.common.js",
   "files": [
     "lib",
     "src",
@@ -14,7 +14,7 @@
   ],
   "typings": "types/index.d.ts",
   "scripts": {
-    "lib": "vue-cli-service build --target lib --name fm-ui --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib --name fwm-ui --dest lib packages/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
