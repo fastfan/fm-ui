@@ -1,17 +1,22 @@
 ---
-title: 'Basic 基础'
-sidebarDepth: 3
+title: 通用详情组件
+date: 2022-05-17
+sidebar: "auto"
+
+publish: false
 ---
 
-## 通用详情
+## 基本用法
 
 适用 PC 端通用详情页面
 
+::: demo
+
 ```html
 <template>
-  <common-detail :list="baseInfo" :headTitle="headTitles">
+  <fm-common-detail :list="baseInfo" :headTitle="headTitles">
     <template v-slot:[slot.slotName] v-for="slot in slotList">
-      <span :key="slot.slotName">
+      <div :key="slot.slotName">
         <el-button
           class="slot-button"
           type="primary"
@@ -29,9 +34,9 @@ sidebarDepth: 3
         <span v-else-if="slot.slotName==='Link'" :style="{color:slot.valueColor}"
           >文字链接</span
         >
-      </span>
+      </div>
     </template>
-  </common-detail>
+  </fm-common-detail>
 </template>
 
 <script>
@@ -110,11 +115,13 @@ sidebarDepth: 3
 </script>
 ```
 
+:::
+
 ### Attributes
 
 |    参数    |     说明     |     类型      |   可选值   | 默认值 |
 | :--------: | :----------: | :-----------: | :--------: | :----: |
-|    list    |   数据列表   |    array   |                | []
+|    list    |   数据列表   |     array     |            |   []   |
 |   xType    |     类型     |    string     | Slot/ null |   —    |
 |   label    |    行标题    |    string     |     —      |   —    |
 |   value    |      值      | string/number |     —      |   —    |
@@ -129,5 +136,3 @@ sidebarDepth: 3
 | 事件名称  | 说明         | 参数               |
 | --------- | ------------ | ------------------ |
 | linkValue | 值点击时触发 | data(返回整行数据) |
-
-

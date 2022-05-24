@@ -1,7 +1,7 @@
 module.exports = {
     base: '/fm-ui/',
     title: 'FM UI',
-    description: 'Inspiration from heian vase',
+    description: 'Inspiration from Ele UI',
     head: [['link', { rel: 'icon', href: '/favicon.ico' }], ['meta', {
         name: 'viewport',
         content: 'width=device-width,initial-scale=1,user-scalable=no'
@@ -39,28 +39,16 @@ module.exports = {
       nav: [
         { text: 'Home', link: '/' },
       ],
-    //   sidebar: [
-    //     {
-    //       title: '开发指南',
-    //       collapsable: true,
-    //       children: ['views/guide/install.md', 'views/guide/get-started.md'],
-    //     },
-    //     {
-    //       title: '组件',
-    //       collapsable: true,
-    //       children: ['views/components/basic/'],
-    //     },
-    //   ],
       sidebar: {
         '/views/':[
             {
                 title: '开发指南',
-                collapsable: true,
+                collapsable: false,
                 children: ['/views/guide/install.md', '/views/guide/get-started.md'],
               },
               {
                 title: '组件',
-                collapsable: true,
+                collapsable: false,
                 children: ['/views/components/basic/'],
               },
         ]

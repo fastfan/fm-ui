@@ -24,7 +24,7 @@
     "d": "bash deploy.sh"
   },
   "dependencies": {
-    "core-js": "2.6.5",
+    "async-validator": "^1.11.5",
     "autoprefixer": "^8.0.0",
     "babel-plugin-import": "^1.13.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -48,7 +48,7 @@
     "@vue/cli-service": "~4.5.11",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.22.6",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",

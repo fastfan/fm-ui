@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2020-12-01 10:03:53
  * @LastEditors: fastfan
- * @LastEditTime: 2022-05-19 17:09:33
+ * @LastEditTime: 2022-05-24 16:18:11
  * @Description: 详情页面通用排版一
  * @FilePath: /qc-cityai-web/src/components/qc-commonInfo/src/index.vue
 -->
@@ -10,7 +10,7 @@
 <script>
 import { Row, Col } from "element-ui";
 export default {
-  name: "common-detail",
+  name: "fm-common-detail",
 
   components: {
     ElCol: Col,

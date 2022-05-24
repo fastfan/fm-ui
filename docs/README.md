@@ -12,7 +12,7 @@ heroImageStyle: {
 }
 actionText: Get Started →
 actionLink: views/guide/install.md
-footer: Inspired by Vase
+footer: Inspired by Fm
 ---
 
 <ClientOnly>

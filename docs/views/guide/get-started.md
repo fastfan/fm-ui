@@ -1,5 +1,9 @@
 ---
 title: '快速上手'
+date: 2022-05-17
+sidebar: "auto"
+
+publish: false
 ---
 
 # 快速上手
@@ -10,15 +14,15 @@ import FmUI from 'fm-ui';
 Vue.use(VaseUI, { router });
 import 'fm-ui/lib/fm-ui.css';
 // 按需注册
-import { Button, KeepAlive } from 'fm-ui';
-Vue.use(Button).use(KeepAlive, { router });
+import { FmCommonDetail, KeepAlive } from 'fm-ui';
+Vue.use(FmCommonDetail).use(KeepAlive, { router });
 ```
 
 ```vue
 // 全局注册
 <template>
   <div id="app">
-    <fm-button type="primary">点击报名</fm-button>
+    <FmCommonDetail />
   </div>
 </template>
 
