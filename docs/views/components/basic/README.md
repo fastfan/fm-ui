@@ -29,7 +29,7 @@ publish: false
           v-for="(item,index) in slot.extraData"
           :key="index"
         >
-          <img style="margin:16px 0 0 0;" class="slot-img" :src="item" />
+          <img style="margin:16px 0 0 0;" class="slot-img" :src="$withBase(item)" />
         </span>
         <span v-else-if="slot.slotName==='Link'" :style="{color:slot.valueColor}"
           >文字链接</span

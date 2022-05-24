@@ -15,6 +15,4 @@ actionLink: views/guide/install.md
 footer: Inspired by Fm
 ---
 
-<ClientOnly>
-  <fm-home/>
-</ClientOnly>
+<span style='color:#8799a3;text-align:center;display: block;'>千里之行，始于足下</span>
