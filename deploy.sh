@@ -2,7 +2,7 @@
  # @Author: fastfan
  # @Date: 2022-05-23 20:30:06
  # @LastEditors: fastfan
- # @LastEditTime: 2022-05-23 20:30:07
+ # @LastEditTime: 2022-05-24 15:35:12
  # @Description: your description
 ### 
 
@@ -29,6 +29,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:JohnYu588/vase-ui.git master:gh-pages
+git push -f git@github.com:fastfan/fm-ui.git master:gh-pages
 
 cd -
