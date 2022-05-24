@@ -9,7 +9,7 @@ publish: false
 # 安装
 
 ```
-npm i -D fm-ui
+npm i -D fwm-ui
 ```
 
 <ClientOnly>

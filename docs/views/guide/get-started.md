@@ -10,11 +10,11 @@ publish: false
 
 ```js
 // 全局注册
-import FmUI from 'fm-ui';
-Vue.use(VaseUI, { router });
-import 'fm-ui/lib/fm-ui.css';
+import FmUI from 'fwm-ui';
+Vue.use(FmUI, { router });
+import 'fwm-ui/lib/fwm-ui.css';
 // 按需注册
-import { FmCommonDetail, KeepAlive } from 'fm-ui';
+import { FmCommonDetail, KeepAlive } from 'fwm-ui';
 Vue.use(FmCommonDetail).use(KeepAlive, { router });
 ```
 
