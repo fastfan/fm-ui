@@ -78,9 +78,14 @@ module.exports = {
                     children: ['/views/guide/install.md', '/views/guide/get-started.md'],
                 },
                 {
-                    title: '组件',
+                    title: '业务组件',
                     collapsable: false,
                     children: ['/views/components/basic/'],
+                },
+                {
+                    title: '可视化组件',
+                    collapsable: false,
+                    children: ['/views/components/visual/'],
                 },
             ]
         },

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{827:function(t,n,e){},874:function(t,n,e){"use strict";e(827)},888:function(t,n,e){"use strict";e.r(n);var s={name:"sakura-home"},a=(e(874),e(11)),i=Object(a.a)(s,(function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"img"})}),[],!1,null,"887da4f6",null);n.default=i.exports}}]);

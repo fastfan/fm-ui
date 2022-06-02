@@ -13,6 +13,14 @@ publish: false
 import FmUI from 'fwm-ui';
 Vue.use(FmUI, { router });
 import 'fwm-ui/lib/fwm-ui.css';
+
+import ElementUi from 'element-ui'
+Vue.use(ElementUi)
+import 'element-ui/lib/theme-chalk/index.css'
+
+import * as echarts from 'echarts'//需要用到可视化组件的话，必装
+Vue.prototype.$echarts = echarts
+
 // 按需注册
 import { FmCommonDetail, KeepAlive } from 'fwm-ui';
 Vue.use(FmCommonDetail).use(KeepAlive, { router });

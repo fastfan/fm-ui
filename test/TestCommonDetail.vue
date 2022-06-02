@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-05-24 15:11:15
  * @LastEditors: fastfan
- * @LastEditTime: 2022-05-24 15:24:09
+ * @LastEditTime: 2022-06-02 14:03:10
  * @Description: your description
 -->
 <template>
@@ -31,11 +31,13 @@
         </div>
       </template>
     </fm-common-detail>
+    <fm-chart :option="optionArr" style="height:500px;"/>
   </div>
 </template>
 
 <script>
-import { infoArr } from "./data.js";
+import { infoArr,optionArr } from "./data.js";
+console.log(optionArr)
 export default {
   components: {},
   props: {},
@@ -44,6 +46,7 @@ export default {
       baseInfo: {
         data: infoArr,
       },
+      optionArr:optionArr
     };
   },
   computed: {

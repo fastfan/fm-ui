@@ -212,7 +212,8 @@
         // since 2.6.2 use code rather than jsfiddle https://blog.codepen.io/documentation/api/prefill/
         const { script, html, style } = this.codepen;
         const resourcesTpl = '<scr' + 'ipt src="//unpkg.com/vue@2.6.11/dist/vue.js"></scr' + 'ipt>' +
-        '\n<scr' + `ipt src="//unpkg.com/element-ui@2.13.2/lib/index.js"></scr` + 'ipt>';
+        '\n<scr' + `ipt src="//unpkg.com/element-ui@2.13.2/lib/index.js"></scr` + 'ipt>'+
+        '\n<scr' + `ipt src="//unpkg.com/echarts@5.2.2/dist/echarts.min.js"></scr` + 'ipt>';
         let jsTpl = (script || '').replace(/export default/, 'var Main =').trim();
         let htmlTpl = `${resourcesTpl}\n<div id="app">\n${html.trim()}\n</div>`;
         let cssTpl = `@import url("//unpkg.com/element-ui@2.13.2/lib/theme-chalk/index.css");\n${(style || '').trim()}\n`;
