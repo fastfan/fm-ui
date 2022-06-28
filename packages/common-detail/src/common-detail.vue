@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2020-12-01 10:03:53
  * @LastEditors: fastfan
- * @LastEditTime: 2022-05-24 15:16:43
+ * @LastEditTime: 2022-06-28 19:53:58
  * @Description: 详情页面通用排版一
  * @FilePath: /pc-ui/src/components/common-detail/src/index.vue
 -->
@@ -48,7 +48,8 @@ export default {
       this.$emit('linkValue', info)
     }
   },
-  render() {
+  // eslint-disable-next-line no-unused-vars
+  render(h) {
     return (
       <div class='cm-common-info'>
         {
