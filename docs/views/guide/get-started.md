@@ -12,7 +12,7 @@ publish: false
 // 全局注册
 import FmUI from 'fwm-ui';
 Vue.use(FmUI, { router });
-import 'fwm-ui/lib/fwm-ui.css';
+import 'fwm-ui/lib/index.css';
 
 import ElementUi from 'element-ui'
 Vue.use(ElementUi)

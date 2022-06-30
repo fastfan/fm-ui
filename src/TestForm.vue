@@ -1,8 +1,15 @@
 <!--
  * @Author: fastfan
+ * @Date: 2022-06-30 17:15:04
+ * @LastEditors: fastfan
+ * @LastEditTime: 2022-06-30 17:15:33
+ * @Description: your description
+-->
+<!--
+ * @Author: fastfan
  * @Date: 2022-06-28 17:20:05
  * @LastEditors: fastfan
- * @LastEditTime: 2022-06-28 17:31:51
+ * @LastEditTime: 2022-06-30 14:22:14
  * @Description: your description
 -->
 <template>
@@ -42,6 +49,20 @@ export default {
           placeholder: "请输入任务编号",
           anchor: 8,
           focus: true,
+        },
+        {
+          label: "自定义jsx内容",
+          prop: "",
+          anchor: 8,
+          xType: "slot",
+          on: {
+            click: () => {
+              console.log("slot click");
+            },
+          },
+          template: () => {
+            return <el-button type="success">aaaa</el-button>;
+          },
         },
         {
           label: "任务类型",
@@ -87,10 +108,10 @@ export default {
           label: "记日志",
           prop: "logFlag",
           xType: "switch",
-          anchor: 24,
+          anchor: 12,
           "active-value": 1,
           "inactive-value": 0,
-        }
+        },
       ],
     };
   },

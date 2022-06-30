@@ -5,7 +5,7 @@ import Chart from './fm-chart';
 import Form from './fm-form';
 // import Table from './fm-table';
 
-import './fonts/font.scss';
+import './style/index.scss';
 // 存储组件列表
 const components = [CommonDetail,Chart,Form];
 
@@ -29,6 +29,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {  KeepAlive,CommonDetail,Chart,Form };
 export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
-  version: '0.1.7',
+  version: '1.0.1',
   install,
 };
