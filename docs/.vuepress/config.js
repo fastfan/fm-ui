@@ -73,6 +73,10 @@ module.exports = {
         },
         sidebar: {
             '/views/': [{
+                    title: '更新日志',
+                    collapsable: false,
+                    children: ['/views/CONTRIBUTING.md'],
+                }, {
                     title: '开发指南',
                     collapsable: false,
                     children: ['/views/guide/install.md', '/views/guide/get-started.md'],
@@ -80,7 +84,7 @@ module.exports = {
                 {
                     title: '业务组件',
                     collapsable: false,
-                    children: ['/views/components/basic/','/views/components/basic/form.md'],
+                    children: ['/views/components/basic/', '/views/components/basic/form.md'],
                 },
                 {
                     title: '可视化组件',

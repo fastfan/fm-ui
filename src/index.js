@@ -30,6 +30,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {  KeepAlive,CommonDetail,Chart,Form,SelectTimeRange };
 export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
-  version: '1.0.1',
+  version: '1.0.2',
   install,
 };

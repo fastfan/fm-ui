@@ -4,11 +4,13 @@
  * @Author: fastfan
  * @Date: 2022-06-28 15:41:33
  * @LastEditors: fastfan
- * @LastEditTime: 2022-07-01 12:09:36
+ * @LastEditTime: 2022-07-01 16:25:43
  * @Description: your description
 -->
 <script>
 import FForm from "../../lib/form/index.js";
+import SelectTime from "./select/SelectTime"
+import SelectTimeRange from "./select/SelectTimeRange"
 import {
   inputRender,
   numberRender,
@@ -22,8 +24,8 @@ import {
 } from "./render/index.js";
 
 const components = {
-  SelectTime: () => import("./select/SelectTime"),
-  SelectTimeRange: () => import("./select/SelectTimeRange"),
+  SelectTime,
+  SelectTimeRange
 };
 const componentList = Object.keys(components);
 
