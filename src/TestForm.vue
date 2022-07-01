@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-06-30 17:15:04
  * @LastEditors: fastfan
- * @LastEditTime: 2022-06-30 17:15:33
+ * @LastEditTime: 2022-07-01 12:24:40
  * @Description: your description
 -->
 <!--
@@ -41,6 +41,7 @@ export default {
         logFlag: 1,
         icon: "",
         version: "",
+        eventTime:[]
       },
       searchFields: [
         {
@@ -100,9 +101,12 @@ export default {
         },
         {
           label: "本环节开始时间",
-          prop: "orderNo",
+          prop: "eventTime",
           placeholder: "输入排序号",
           anchor: 12,
+          xType: "SelectTimeRange.datetimerange",
+          format: "yyyy-MM-dd HH:mm:ss",
+          clearable:true
         },
         {
           label: "记日志",
