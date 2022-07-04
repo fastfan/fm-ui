@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 /dist
-lib/
 
 # local env files
 .env.local
@@ -27,7 +26,6 @@ pnpm-debug.log*
 .DS_Store
 .idea
 .VSCodeCounter
-lib
 # npm
 node_modules
 
