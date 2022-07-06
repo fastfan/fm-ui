@@ -4,11 +4,11 @@
  * @Author: fastfan
  * @Date: 2022-06-28 15:41:33
  * @LastEditors: fastfan
- * @LastEditTime: 2022-07-01 16:25:43
+ * @LastEditTime: 2022-07-06 14:29:45
  * @Description: your description
 -->
 <script>
-import FForm from "../../lib/form/index.js";
+import { Form } from 'element-ui';
 import SelectTime from "./select/SelectTime"
 import SelectTimeRange from "./select/SelectTimeRange"
 import {
@@ -46,7 +46,7 @@ export default {
     },
   },
   // components,
-  mixins: [FForm],
+  mixins: [Form],
   provide() {
     return {
       Form: this,

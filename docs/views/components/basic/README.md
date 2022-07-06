@@ -1,5 +1,5 @@
 ---
-title: 通用详情组件
+title: 详情组件
 date: 2022-05-17
 sidebar: "auto"
 

@@ -3,12 +3,12 @@ import KeepAlive from './keep-alive';
 import CommonDetail from './common-detail';
 import Chart from './fm-chart';
 import Form from './fm-form';
+import Table from './fm-table';
 import SelectTimeRange from './fm-form/src/select/SelectTimeRange.vue';
-// import Table from './fm-table';
 
 import './style/index.scss';
 // 存储组件列表
-const components = [CommonDetail,Chart,Form,SelectTimeRange];
+const components = [CommonDetail,Chart,Form,SelectTimeRange,Table];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function(Vue, options = { key: '', router: {} }) {
@@ -27,9 +27,9 @@ const install = function(Vue, options = { key: '', router: {} }) {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
-export {  KeepAlive,CommonDetail,Chart,Form,SelectTimeRange };
+export {  KeepAlive,CommonDetail,Chart,Form,SelectTimeRange,Table };
 export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
-  version: '1.0.2',
+  version: '1.0.4',
   install,
 };

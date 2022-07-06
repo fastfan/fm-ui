@@ -84,7 +84,7 @@ module.exports = {
                 {
                     title: '业务组件',
                     collapsable: false,
-                    children: ['/views/components/basic/', '/views/components/basic/form.md'],
+                    children: ['/views/components/basic/', '/views/components/basic/form.md', '/views/components/basic/table.md'],
                 },
                 {
                     title: '可视化组件',

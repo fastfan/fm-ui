@@ -1,5 +1,5 @@
 ---
-title: 通用表单组件
+title: 表单组件
 date:
 sidebar: "auto"
 
@@ -8,7 +8,7 @@ publish: false
 
 ## 基本用法
 
-适用于 PC 的二次封装表单
+适用于 PC 的基于element-ui二次封装表单
 Form 只提供了基础的 input 类型；包括：**文本输入框** 、**文本下拉框**、 **时间选择器**、 **自定义**等，
 items和fields 表单域内所有属性都兼容 element-ui 对应组件属性，请参考 element-ui 组件库文档设置。
 
