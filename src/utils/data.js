@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-05-24 15:21:08
  * @LastEditors: fastfan
- * @LastEditTime: 2022-06-02 13:58:01
+ * @LastEditTime: 2022-07-07 13:37:47
  * @Description: your description
  */
 export const infoArr = [{
@@ -39,7 +39,7 @@ export const infoArr = [{
     xType: "Slot",
     slotName: 'ImgViwer',
     extraData: [
-      require("./demo.png")
+      require("@/assets/imgs/demo.png")
     ]
   },
   {

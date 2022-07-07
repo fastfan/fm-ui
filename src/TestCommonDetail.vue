@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-05-24 15:11:15
  * @LastEditors: fastfan
- * @LastEditTime: 2022-06-28 17:20:13
+ * @LastEditTime: 2022-07-07 13:48:36
  * @Description: your description
 -->
 <template>
@@ -31,12 +31,13 @@
         </div>
       </template>
     </fm-common-detail>
+    <h1>echarts</h1>
     <fm-chart :option="optionArr" style="height:500px;"/>
   </div>
 </template>
 
 <script>
-import { infoArr,optionArr } from "./data.js";
+import { infoArr,optionArr } from "@/utils/data.js";
 console.log(optionArr)
 export default {
   components: {},

@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-06-30 17:19:21
  * @LastEditors: fastfan
- * @LastEditTime: 2022-07-06 15:19:05
+ * @LastEditTime: 2022-07-07 13:48:02
  * @Description: your description
 -->
 <!--
@@ -14,22 +14,25 @@
 -->
 <template>
   <div id="app">
-   <test-common-detail />
-   <test-form />
-   <test-table />
+    <h1>详情</h1>
+    <test-common-detail />
+    <h1>表单</h1>
+    <test-form />
+    <h1>表格</h1>
+    <test-table />
   </div>
 </template>
 
 <script>
-import TestCommonDetail from './TestCommonDetail';
-import TestForm from './TestForm';
-import TestTable from './TestTable';
+import TestCommonDetail from "./TestCommonDetail";
+import TestForm from "./TestForm";
+import TestTable from "./TestTable";
 export default {
-  name: 'app',
+  name: "app",
   components: {
     TestForm,
     TestTable,
-    TestCommonDetail
+    TestCommonDetail,
   },
 };
 </script>
