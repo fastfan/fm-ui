@@ -1,6 +1,6 @@
 ---
 title: Webpack Tree-Shaking 实现原理
-date: 2022-07-14
+date: 2021-07-14
 sidebar: "auto"
 categories:
   - plugins
