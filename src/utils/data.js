@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-05-24 15:21:08
  * @LastEditors: fastfan
- * @LastEditTime: 2022-07-07 13:37:47
+ * @LastEditTime: 2022-08-26 11:20:47
  * @Description: your description
  */
 export const infoArr = [{
@@ -81,3 +81,110 @@ export const optionArr = {
     }
   }]
 }
+
+
+export const infoArr2 = [
+  {
+    rowData: [
+      {
+        label: '气瓶标签号',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'lableNo'
+      },
+      {
+        label: '权属企业',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'enterpriseName'
+      }
+    ]
+  },
+  {
+    rowData: [
+      {
+        label: '标签安装时间',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'signInstallTime'
+      },
+      {
+        label: '气瓶钢码编号',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'steelNo'
+      }
+    ]
+  },
+  {
+    rowData: [
+      {
+        label: '出厂编号',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'makeNo'
+      },
+      {
+        label: '生产厂家',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'manufacturer'
+      }
+    ]
+  },
+  {
+    rowData: [
+      {
+        label: '出厂日期',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'productionDate'
+      },
+      {
+        label: '瓶体自重(kg)',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'weight'
+      }
+    ]
+  },
+  {
+    rowData: [
+      {
+        label: '气瓶型号',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'bottleModel'
+      },
+      {
+        label: '气瓶规格(kg)',
+        col: 12,
+        labelColor: '',
+        valueColor: '',
+        prop: 'specification'
+      }
+    ]
+  },
+  {
+    rowData: [
+      {
+        label: '气瓶图片',
+        col: 24,
+        labelColor: '',
+        valueColor: '',
+        prop: 'coverPicture',
+        xType: 'Slot',
+        slotName: 'ImgViwer'
+      }
+    ]
+  }
+]
