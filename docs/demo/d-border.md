@@ -11,7 +11,8 @@ publish: true
 ---
 
 
-::: demo 
+::: demo
+
 ```html
 <template>
   <div class="d-border-content">
@@ -78,4 +79,5 @@ publish: true
 }
 </style>
 ```
+
 :::
