@@ -1,5 +1,12 @@
-export const inputRender = function(h, item, opts) {
-  return [h("el-input", opts)]
+export const inputRender = function (h, item, opts) {
+  return [
+    h('el-input', opts, [
+      typeof item.prefix === 'function' ? item.prefix(h) : item.prefix,
+      typeof item.suffix === 'function' ? item.suffix(h) : item.suffix,
+      typeof item.prepend === 'function' ? item.prepend(h) : item.prepend,
+      typeof item.append === 'function' ? item.append(h) : item.append
+    ])
+  ]
 }
 export const numberRender = function(h, item, opts) {
   return [h("el-input-number", opts)]

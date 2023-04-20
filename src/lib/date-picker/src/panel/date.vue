@@ -180,6 +180,7 @@
       showTime(val) {
         /* istanbul ignore if */
         if (!val) return;
+        // eslint-disable-next-line no-unused-vars
         this.$nextTick(_ => {
           const inputElm = this.$refs.input.$el;
           if (inputElm) {

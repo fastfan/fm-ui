@@ -505,9 +505,11 @@
         if (parsedValue) {
           if (type === 'min') {
             this.minDate = modifyTime(this.minDate, parsedValue.getHours(), parsedValue.getMinutes(), parsedValue.getSeconds());
+            // eslint-disable-next-line no-unused-vars
             this.$nextTick(_ => this.$refs.minTimePicker.adjustSpinners());
           } else {
             this.maxDate = modifyTime(this.maxDate, parsedValue.getHours(), parsedValue.getMinutes(), parsedValue.getSeconds());
+            // eslint-disable-next-line no-unused-vars
             this.$nextTick(_ => this.$refs.maxTimePicker.adjustSpinners());
           }
         }

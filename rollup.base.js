@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-06-30 16:43:06
  * @LastEditors: fastfan
- * @LastEditTime: 2022-06-30 17:52:21
+ * @LastEditTime: 2023-04-20 16:20:22
  * @Description: your description
  */
 import json from '@rollup/plugin-json'
@@ -44,11 +44,13 @@ export function getConfig(type, min = true) {
     },
     output: [
       {
-        format: 'esm',
-        file: 'lib/index.js',
+        name: 'index',
+        file: 'lib/index.js', // 打包后的index文件
+        format: 'umd', // umd格式 可换成 iife
         globals: {
-          vue: 'vue'
-        }
+          vue: 'Vue'
+        },
+        inlineDynamicImports: true
       }],
     plugins: [
       vue({

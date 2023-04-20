@@ -1,6 +1,6 @@
 {
   "name": "fwm-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Component Library for Vue.js.",
   "private": false,
   "author": "fastfan",
@@ -49,6 +49,7 @@
     "echarts": "~5.2.2",
     "element-ui": "^2.13.2",
     "highlight.js": "^9.12.0",
+    "mammoth": "^1.5.1",
     "postcss-import": "^12.0.1",
     "postcss-url": "^8.0.0",
     "rollup": "^2.68.0",
@@ -74,7 +75,8 @@
     "vue-template-compiler": "^2.6.12",
     "vuepress-plugin-cursor-effects": "^1.1.2",
     "vuepress-plugin-nuggets-style-copy": "^1.0.3",
-    "vuepress-theme-reco": "^1.5.3"
+    "vuepress-theme-reco": "^1.5.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",

@@ -1,21 +1,287 @@
 .fm-icon-loading {
-    animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.fm-icon--right {
+  margin-left: 5px;
+}
+
+.fm-icon--left {
+  margin-right: 5px;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
   }
-  
-  .fm-icon--right {
-    margin-left: 5px;
+
+  100% {
+    transform: rotateZ(360deg);
   }
-  
-  .fm-icon--left {
-    margin-right: 5px;
-  }
-  
-  @keyframes rotating {
-    0% {
-      transform: rotateZ(0deg);
+}
+
+.submit-fields-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 !important;
+  justify-content: flex-start; // 替代原先的space-between布局方式
+
+  .fields-box-item {
+    padding: 0 !important;
+    padding-right: 16px !important;
+
+    .el-form-item {
+      width: 100%;
+
+      .el-form-item__content {
+        line-height: 32px;
+        clear: both;
+
+        .el-select,
+        .el-cascader,
+        .el-radio-group {
+          width: 100%;
+        }
+
+        .el-input__inner {
+          height: 32px;
+          line-height: 32px;
+          // border-radius: 0;
+        }
+
+        .el-cascader {
+          line-height: 32px;
+
+          .el-input__icon {
+            line-height: 32px;
+          }
+        }
+
+        .el-date-editor .el-icon-date {
+          line-height: 32px;
+        }
+
+        .el-date-editor .el-range__icon,
+        .el-date-editor .el-range__close-icon,
+        .el-date-editor .el-range-separator {
+          line-height: 25px;
+          padding: 0 0 0 2px;
+        }
+
+        .el-date-editor .el-range__close-icon {
+          width: 16px;
+        }
+
+        .el-date-editor--datetimerange.el-input,
+        .el-date-editor--datetimerange.el-input__inner,
+        .el-date-editor.el-input,
+        .el-date-editor.el-input__inner {
+          width: 100%;
+        }
+
+        .el-radio {
+          margin-right: 25px;
+        }
+
+        .file-preview {
+          .box {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .success {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 100px;
+              height: 40px;
+              overflow: hidden;
+              z-index: 1;
+
+              .el-icon-check {
+                position: absolute;
+                top: 0;
+                right: 6px;
+                font-size: 20px;
+                font-weight: 600;
+              }
+
+              &::after {
+                position: absolute;
+                top: -25px;
+                right: -25px;
+                content: "";
+                width: 100px;
+                height: 40px;
+                background-color: #13ce66;
+                z-index: -1;
+                transform: rotateZ(-154deg);
+              }
+            }
+
+            .img {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              font-size: 10px;
+
+              .preview {
+                width: 36px;
+                height: 36px;
+              }
+
+              span {
+                text-align: center;
+                line-height: 14px;
+                margin-top: 8px;
+              }
+            }
+          }
+
+          .el-dialog__body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0 20px 0 !important;
+            min-height: 50vh;
+          }
+
+          .el-dialog__header {
+            line-height: 100%;
+          }
+
+          .el-upload--picture-card,
+          .el-upload-list__item {
+            width: 80px !important;
+            height: 80px !important;
+            line-height: 80px !important;
+          }
+
+          .imageBox {
+            padding-bottom: 40px;
+
+            :deep(img) {
+              width: auto;
+              max-height: 50vh;
+            }
+          }
+
+          .el-upload-list__item-actions {
+            z-index: 10;
+          }
+
+          .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            text-align: center;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 30px;
+            overflow: hidden;
+            z-index: 1;
+
+            .el-icon-loading {
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+
+          .el-icon-plus {
+            vertical-align: middle;
+          }
+
+          .noAdd {
+            .el-upload {
+              display: none;
+            }
+          }
+
+          .hideUpload .el-upload--picture-card {
+            display: none;
+          }
+
+          .docClass {
+            padding: 0 20px;
+
+            p {
+              line-height: 40px;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              border: none;
+
+              td {
+                text-align: center;
+                border: solid #000 1px;
+                padding: 6px 8px;
+              }
+            }
+          }
+        }
+
+        .file-upload-multi {
+          display: flex;
+          flex-direction: column;
+
+          .file-upload-container {
+            // display: flex;
+            flex: 1;
+            width: 100%;
+
+            .upload-tips {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+
+              .upload-img {
+                width: 37px;
+                height: 29px;
+              }
+            }
+          }
+
+          .el-upload__text {
+            font-size: 12px;
+            color: #333;
+          }
+
+          .noAdd {
+            .el-upload {
+              display: none;
+            }
+          }
+
+          .el-upload {
+            margin-right: 20px;
+          }
+
+          .el-upload-dragger {
+            width: 300px;
+          }
+
+          .el-upload-list__item-name {
+            text-overflow: ellipsis;
+            max-width: 473px;
+            margin-right: 0;
+          }
+        }
+      }
     }
-  
-    100% {
-      transform: rotateZ(360deg);
-    }
   }
+}

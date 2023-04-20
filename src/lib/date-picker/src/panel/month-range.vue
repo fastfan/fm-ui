@@ -284,6 +284,7 @@
       }
     },
 
+    // eslint-disable-next-line vue/no-unused-components
     components: { MonthTable, ElInput, ElButton }
   };
 </script>

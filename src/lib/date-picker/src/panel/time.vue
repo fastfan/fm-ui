@@ -67,6 +67,7 @@
 
         this.date = date;
         if (this.visible && this.needInitAdjust) {
+          // eslint-disable-next-line no-unused-vars
           this.$nextTick(_ => this.adjustSpinners());
           this.needInitAdjust = false;
         }

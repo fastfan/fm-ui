@@ -2,7 +2,7 @@
  * @Author: fastfan
  * @Date: 2022-06-30 17:19:21
  * @LastEditors: fastfan
- * @LastEditTime: 2022-07-07 13:48:02
+ * @LastEditTime: 2023-04-20 15:01:08
  * @Description: your description
 -->
 <!--
@@ -14,6 +14,8 @@
 -->
 <template>
   <div id="app">
+    <h1>表单提交</h1>
+    <TestSubmitForm />
     <h1>详情</h1>
     <test-common-detail />
     <h1>表单</h1>
@@ -25,6 +27,7 @@
 
 <script>
 import TestCommonDetail from "./TestCommonDetail";
+import TestSubmitForm from "./TestSubmitForm";
 import TestForm from "./TestForm";
 import TestTable from "./TestTable";
 export default {
@@ -32,6 +35,7 @@ export default {
   components: {
     TestForm,
     TestTable,
+    TestSubmitForm,
     TestCommonDetail,
   },
 };
