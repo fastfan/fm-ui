@@ -103,6 +103,10 @@ export default {
       // 计数器
       return this.handleRender("el-input-number", h, item, opts);
     };
+    this.R.timeRender = function (h, item, opts) {
+      // 时间
+      return this.handleRender('el-time-picker', h, item, opts)
+    };
     this.R.sliderRender = function (h, item, opts) {
       // 滑块
       return this.handleRender("el-slider", h, item, opts);

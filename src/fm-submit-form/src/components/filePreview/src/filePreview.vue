@@ -2,7 +2,15 @@
   <div class="file-preview">
     <el-upload
       list-type="picture-card"
-      :class="[readonly ? 'noAdd' : '', hideUpload ? 'hideUpload' : '']"
+      :class="[
+        readonly ? 'noAdd' : '',
+        hideUpload ? 'hideUpload' : '',
+        fontItem === 'front'
+          ? 'el-upload-front'
+          : fontItem === 'back'
+          ? 'el-upload-front'
+          : '',
+      ]"
       :disabled="readonly"
       :accept="accept"
       :data="extraData"
@@ -18,7 +26,18 @@
       v-bind="$attrs"
       v-on="$listeners"
     >
-      <i slot="default" class="el-icon-plus" />
+      <i
+        :class="[
+          fontItem === 'front'
+            ? 'el-icon-plus-front'
+            : fontItem === 'back'
+            ? 'el-icon-plus-back'
+            : fontItem === 'other'
+            ? 'el-icon-plus-other'
+            : '',
+          'el-icon-plus',
+        ]"
+      />
       <div slot="file" slot-scope="{ file }" class="box">
         <!-- 上传成功 -->
         <div v-if="file.status === 'success'" class="success">
@@ -193,6 +212,9 @@
           </span>
         </span>
       </div>
+      <div class="el-upload__tip" slot="tip" style="color: #999">
+        {{ description }}
+      </div>
     </el-upload>
     <el-dialog
       v-if="dialogVisible"
@@ -239,264 +261,280 @@
 </template>
 
 <script>
-import * as mammoth from 'mammoth'
-import * as XLSX from 'xlsx'
+import * as mammoth from "mammoth";
+import * as XLSX from "xlsx";
 
 const FILETYPE = {
   image: [
-    'gif',
-    'jpeg',
-    'jpg',
-    'png',
-    'svg+xml',
-    'tiff',
-    'jfif',
-    'vnd.wap.wbmp',
-    'webp'
+    "gif",
+    "jpeg",
+    "jpg",
+    "png",
+    "svg+xml",
+    "tiff",
+    "jfif",
+    "vnd.wap.wbmp",
+    "webp",
   ],
-  video: ['m4v', 'mov', 'mp4', 'ogv'],
-  audio: ['oga', 'ogg', 'uvva', 'mp3'],
-  doc: 'application/msword',
-  docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  xls: 'application/vnd.ms-excel',
-  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-  pdf: 'application/pdf',
-  ppt: 'application/vnd.ms-powerpoint',
-  pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-  txt: 'text/plain'
-}
+  video: ["m4v", "mov", "mp4", "ogv"],
+  audio: ["oga", "ogg", "uvva", "mp3"],
+  doc: "application/msword",
+  docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  xls: "application/vnd.ms-excel",
+  xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  pdf: "application/pdf",
+  ppt: "application/vnd.ms-powerpoint",
+  pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  txt: "text/plain",
+};
 export default {
-  name: 'FilePreview',
+  name: "FilePreview",
   props: {
     readonly: {
       type: Boolean,
-      default: () => false
+      default: () => false,
     },
     service: {
       type: Function,
-      default: () => () => {}
+      default: () => () => {},
     },
     beforeUpload: {
       type: Function,
-      default: () => () => {}
+      default: () => () => {},
     },
     sourceList: {
       type: Array,
       default: () => {
-        return []
-      }
-    }
+        return [];
+      },
+    },
   },
   data() {
     return {
-      docHtml: '',
+      docHtml: "",
       sourceFile: [],
       dialog: {},
       dialogVisible: false,
-      fileList: []
-    }
+      fileList: [],
+    };
   },
   computed: {
     FILETYPE() {
-      return FILETYPE
+      return FILETYPE;
     },
     hideUpload() {
-      const limit = this.$attrs.limit || 5 // 默认5个
-      return this.fileList.length >= limit
+      const limit = this.$attrs.limit || 5; // 默认5个
+      return this.fileList.length >= limit;
     },
     accept() {
-      const accept = this.$attrs.accept
-      return accept
+      const accept = this.$attrs.accept;
+      return accept;
     },
     headers() {
-      const headers = this.$attrs.headers || {}
-      return headers
+      const headers = this.$attrs.headers || {};
+      return headers;
+    },
+    description() {
+      const description = this.$attrs.description || "";
+      return description;
     },
     extraData() {
-      const data = this.$attrs.data || {}
-      return data
-    }
+      const data = this.$attrs.data || {};
+      return data;
+    },
+    fontItem() {
+      const data = this.$attrs.fontItem || {};
+      return data;
+    },
   },
   watch: {
     fileList(val) {
-      this.$emit('change', val)
-    }
+      this.$emit("change", val);
+    },
   },
   mounted() {},
   methods: {
     // 自定义上传
     httpRequest(content) {
-      const formData = new FormData()
-      formData.append('file', content.file)
+      const formData = new FormData();
+      formData.append("file", content.file);
       this.service({
-        method: 'post',
+        method: "post",
         url: content.action,
         data: formData,
         processData: false, // 告诉axios不要去处理发送的数据(重要参数)
-        contentType: false // 告诉axios不要去设置Content-Type请求头
+        contentType: false, // 告诉axios不要去设置Content-Type请求头
       })
         .then((res) => {
           if (res.success) {
-            content.onSuccess(res)
+            content.onSuccess(res);
           } else {
-            content.onError()
+            content.onError();
           }
         })
         .catch((err) => {
-          content.onError(err)
-        })
+          content.onError(err);
+        });
     },
     // 删除
     handleRemove(file) {
-      const index = this.fileList.findIndex((x) => x.uid === file.uid)
+      const index = this.fileList.findIndex((x) => x.uid === file.uid);
       if (index !== -1) {
-        this.fileList.splice(index, 1)
+        this.fileList.splice(index, 1);
       }
       // this.hideUpload = this.fileList.length >= this.limit
     },
     onChange(val, fileList) {
-      console.log(fileList)
+      console.log(fileList);
       //   this.hideUpload = fileList.length >= this.limit
     },
     onProgress() {
-      this.onProgressStatus = true
+      this.onProgressStatus = true;
     },
     onBeforeupload(file) {
-      return this.beforeUpload(file)
+      return this.beforeUpload(file);
     },
     // 预览
     handlePictureCardPreview(file) {
-      const type = file.raw.type || this.handleFileType(file.url)
+      const type = file.raw.type || this.handleFileType(file.url);
       // docx
       if (type === FILETYPE.docx) {
         if (file.raw instanceof File) {
-          const fileReader = new FileReader()
-          fileReader.readAsArrayBuffer(file.raw)
+          const fileReader = new FileReader();
+          fileReader.readAsArrayBuffer(file.raw);
           fileReader.addEventListener(
-            'loadend',
+            "loadend",
             (e) => {
-              const buf = e.target.result
+              const buf = e.target.result;
               mammoth
                 .convertToHtml({ arrayBuffer: buf })
                 .then((res) => {
-                  this.docHtml = res.value
+                  this.docHtml = res.value;
                 })
                 .catch((err) => {
-                  console.log(err, '=====---')
-                })
+                  console.log(err, "=====---");
+                });
             },
             false
-          )
+          );
         } else {
-          const xhr = new XMLHttpRequest()
-          xhr.open('get', file.url, true)
-          xhr.responseType = 'arraybuffer'
+          const xhr = new XMLHttpRequest();
+          xhr.open("get", file.url, true);
+          xhr.responseType = "arraybuffer";
           xhr.onload = () => {
             if (xhr.status === 200) {
               mammoth
                 .convertToHtml({ arrayBuffer: new Uint8Array(xhr.response) })
                 .then((res) => {
                   this.$nextTick(() => {
-                    this.docHtml = res.value
-                  })
-                })
+                    this.docHtml = res.value;
+                  });
+                });
             }
-          }
-          xhr.send()
+          };
+          xhr.send();
         }
       }
 
       if (type === FILETYPE.xls || type === FILETYPE.xlsx) {
         if (file.raw instanceof File) {
-          const fileReader = new FileReader()
-          fileReader.readAsArrayBuffer(file.raw)
+          const fileReader = new FileReader();
+          fileReader.readAsArrayBuffer(file.raw);
           fileReader.addEventListener(
-            'loadend',
+            "loadend",
             (e) => {
-              const buf = e.target.result
-              const workbook = XLSX.read(buf, { type: 'array' })
-              const worksheet = workbook.Sheets[workbook.SheetNames[0]]
-              this.docHtml = XLSX.utils.sheet_to_html(worksheet)
+              const buf = e.target.result;
+              const workbook = XLSX.read(buf, { type: "array" });
+              const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+              this.docHtml = XLSX.utils.sheet_to_html(worksheet);
             },
             false
-          )
+          );
         } else {
-          const xhr = new XMLHttpRequest()
-          xhr.open('get', file.url, true)
-          xhr.responseType = 'arraybuffer'
+          const xhr = new XMLHttpRequest();
+          xhr.open("get", file.url, true);
+          xhr.responseType = "arraybuffer";
           xhr.onload = () => {
             if (xhr.status === 200) {
-              const buf = new Uint8Array(xhr.response)
-              const workbook = XLSX.read(buf, { type: 'array' })
-              const worksheet = workbook.Sheets[workbook.SheetNames[0]]
-              this.docHtml = XLSX.utils.sheet_to_html(worksheet)
+              const buf = new Uint8Array(xhr.response);
+              const workbook = XLSX.read(buf, { type: "array" });
+              const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+              this.docHtml = XLSX.utils.sheet_to_html(worksheet);
             }
-          }
-          xhr.send()
+          };
+          xhr.send();
         }
       }
 
       if (type === FILETYPE.ppt || type === FILETYPE.pptx) {
-        window.open(file.url)
-        return
+        window.open(file.url);
+        return;
       }
 
-      this.dialog = file
+      this.dialog = file;
 
       this.$nextTick(() => {
-        this.dialogVisible = true
-      })
+        this.dialogVisible = true;
+      });
     },
     // 上传成功
     onSuccess(response, file, fileList) {
       // console.log(response, 'response')
       // console.log(file, 'file')
-      this.fileList = fileList
-      this.$emit('_getUrl', fileList)
+      this.fileList = fileList;
+      this.$emit("_getUrl", fileList);
     },
     // 上传失败
     onError(error, file, fileList) {
       if (file.size / 1024 / 1024 > 50) {
-        this.$message.error('文件上传失败，文件大小超出最大限制50MB')
+        this.$message.error("文件上传失败，文件大小超出最大限制50MB");
       }
-      console.log(error, 'error')
-      console.log(file, 'file')
-      console.log(fileList, 'fileList')
+      console.log(error, "error");
+      console.log(file, "file");
+      console.log(fileList, "fileList");
     },
     // 处理传过来的图片
     handleSourceFile() {
       this.fileList = this.sourceFile.map((item) => ({
         name: item.name || item.url,
         raw: {
-          type: item.type || this.handleFileType(item.url)
+          type: item.type || this.handleFileType(item.url),
         },
         response: {
           data: {
             ...item.response.data,
-            url: item.url
-          }
+            url: item.url,
+          },
         },
-        status: 'success',
-        url: item.url
-      }))
+        status: "success",
+        url: item.url,
+      }));
+    },
+    // 获取最后斜杠后的字符串
+    LastStr(str) {
+      console.log("str::::::", str);
+      const index = str.lastIndexOf(".");
+      str = str.substring(index + 1, str.length);
+      return str;
     },
     handleFileType(url) {
-      const arr = url.split('.')
-      const type = arr[arr.length - 1] // 文件后缀
-      let fileType = type
+      // const arr = url.split('.')
+      // const type = arr[arr.length - 1] // 文件后缀
+      const type = this.LastStr(url);
+      let fileType = type;
       if (FILETYPE[type]) {
-        fileType = FILETYPE[type]
+        fileType = FILETYPE[type];
       } else {
         Object.keys(FILETYPE).forEach((key) => {
           if (Array.isArray(FILETYPE[key])) {
             if (FILETYPE[key].includes(type)) {
-              fileType = key
+              fileType = key;
             }
           }
-        })
+        });
       }
-      return fileType
-    }
-  }
-}
+      return fileType;
+    },
+  },
+};
 </script>

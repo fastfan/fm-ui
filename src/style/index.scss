@@ -160,6 +160,44 @@
             height: 80px !important;
             line-height: 80px !important;
           }
+          .el-upload-front {
+
+            .el-upload--picture-card,
+            .el-upload-list__item {
+              width: 120px !important;
+              height: 80px !important;
+              line-height: 58px !important;
+              background: #fff;
+            }
+
+            .box {
+              width: 120px !important;
+            }
+          }
+
+          .el-icon-plus:before {
+            content: "\A\E6D9\A上传" !important;
+            font-size: 12px !important;
+            white-space: pre !important;
+          }
+
+          .el-icon-plus-front:before {
+            content: "\A\E6D9\A身份证正面（人脸）" !important;
+            font-size: 12px !important;
+            white-space: pre !important;
+          }
+
+          .el-icon-plus-back:before {
+            content: "\A\E6D9\A身份证背面" !important;
+            font-size: 12px !important;
+            white-space: pre !important;
+          }
+
+          .el-icon-plus-other:before {
+            content: "\A\E6D9\A委托协议" !important;
+            font-size: 12px !important;
+            white-space: pre !important;
+          }
 
           .imageBox {
             padding-bottom: 40px;

@@ -268,6 +268,24 @@ export default {
           valueFormat: "yyyy-MM-dd HH:mm:ss",
         },
         {
+          label: '时间timepicker',
+          prop: 'chargeTimeInterval',
+          props: {
+            value: ''
+          },
+          anchor: 24,
+          required: true,
+          xType: 'time',
+          isRange: true,
+          arrowControl: true,
+          format: 'HH:mm',
+          valueFormat: 'HH:mm',
+          className: 'receiptTime',
+          startPlaceholder: '开始时间',
+          endPlaceholder: '结束时间',
+          placeholder: '选择时间范围'
+        },
+        {
           label: "下拉选",
           prop: "operator",
           xType: "select",
@@ -370,13 +388,14 @@ export default {
           anchor: 12,
           xType: "upload",
           attrs: {
-            accept: "",
             data: {},
             headers: {},
             limit: 3,
             action: "/municipal/api/file/uploadFile",
             readonly: false,
             // service: request,
+             accept: ".jpg,.jpeg,.png,.gif,.pdf,.JPG,.JPEG,.PDF,.doc,.docx",
+            description: '经营管理单位营业执照（副本）复印件',
             "before-upload": (file) => {
               return new Promise((resolve, reject) => {
                 // 判断上传格式*****************
@@ -548,7 +567,7 @@ export default {
 |  参数  |                         说明                         |      类型      |                  可选值                   | 默认值 |
 | :----: | :--------------------------------------------------: | :------------: | :---------------------------------------: | :----: |
 | xType  |                      表单项类型                      |     string     | SelectTime.date,.datetime,.datetimerange  |   —    |
-| xType  |                      表单项类型                      |     string     |    checkbox,radio,input,number,switch     |   —    |
+| xType  |                      表单项类型                      |     string     |    time,checkbox,radio,input,number,switch     |   —    |
 | xType  |                      表单项类型                      |     string     |    rate,inputNumber,slider,colorPicker    |   —    |
 | xType  |                      表单项类型                      |     string     |        upload,dragUpload,cascader         |   —    |
 | anchor |                     每项所占栅格                     |     number     |                   1-24                    |   24   |

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .fm-icon-loading {
   animation: rotating 2s linear infinite;
 }
@@ -137,6 +138,36 @@
   width: 80px !important;
   height: 80px !important;
   line-height: 80px !important;
+}
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-upload-front .el-upload--picture-card,
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-upload-front .el-upload-list__item {
+  width: 120px !important;
+  height: 80px !important;
+  line-height: 58px !important;
+  background: #fff;
+}
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-upload-front .box {
+  width: 120px !important;
+}
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-icon-plus:before {
+  content: "\a\e6d9\a上传" !important;
+  font-size: 12px !important;
+  white-space: pre !important;
+}
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-icon-plus-front:before {
+  content: "\a\e6d9\a身份证正面（人脸）" !important;
+  font-size: 12px !important;
+  white-space: pre !important;
+}
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-icon-plus-back:before {
+  content: "\a\e6d9\a身份证背面" !important;
+  font-size: 12px !important;
+  white-space: pre !important;
+}
+.submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .el-icon-plus-other:before {
+  content: "\a\e6d9\a委托协议" !important;
+  font-size: 12px !important;
+  white-space: pre !important;
 }
 .submit-fields-box .fields-box-item .el-form-item .el-form-item__content .file-preview .imageBox {
   padding-bottom: 40px;

@@ -2,7 +2,15 @@
   <div class="file-preview">
     <el-upload
       list-type="picture-card"
-      :class="[readonly ? 'noAdd' : '', hideUpload ? 'hideUpload' : '']"
+      :class="[
+        readonly ? 'noAdd' : '',
+        hideUpload ? 'hideUpload' : '',
+        fontItem === 'front'
+          ? 'el-upload-front'
+          : fontItem === 'back'
+          ? 'el-upload-front'
+          : '',
+      ]"
       :disabled="readonly"
       :accept="accept"
       :data="extraData"
@@ -18,7 +26,18 @@
       v-bind="$attrs"
       v-on="$listeners"
     >
-      <i slot="default" class="el-icon-plus" />
+    <i
+    :class="[
+      fontItem === 'front'
+        ? 'el-icon-plus-front'
+        : fontItem === 'back'
+        ? 'el-icon-plus-back'
+        : fontItem === 'other'
+        ? 'el-icon-plus-other'
+        : '',
+      'el-icon-plus'
+    ]"
+  />
       <div slot="file" slot-scope="{ file }" class="box">
         <!-- 上传成功 -->
         <div v-if="file.status === 'success'" class="success">
@@ -193,6 +212,9 @@
           </span>
         </span>
       </div>
+      <div class="el-upload__tip" slot="tip" style="color: #999">
+        {{ description }}
+      </div>
     </el-upload>
     <el-dialog
       v-if="dialogVisible"
@@ -310,8 +332,16 @@ export default {
       const headers = this.$attrs.headers || {}
       return headers
     },
+    description() {
+      const description = this.$attrs.description || ''
+      return description
+    },
     extraData() {
       const data = this.$attrs.data || {}
+      return data
+    },
+    fontItem() {
+      const data = this.$attrs.fontItem || {}
       return data
     }
   },
@@ -478,9 +508,17 @@ export default {
         url: item.url
       }))
     },
+    // 获取最后斜杠后的字符串
+    LastStr(str) {
+      console.log('str::::::', str)
+      const index = str.lastIndexOf('.')
+      str = str.substring(index + 1, str.length)
+      return str
+    },
     handleFileType(url) {
-      const arr = url.split('.')
-      const type = arr[arr.length - 1] // 文件后缀
+      // const arr = url.split('.')
+      // const type = arr[arr.length - 1] // 文件后缀
+      const type = this.LastStr(url)
       let fileType = type
       if (FILETYPE[type]) {
         fileType = FILETYPE[type]
